@@ -1,2 +1,2 @@
 # image-ubuntu
-Provide Ubuntu-based images.
+Provide Ubuntu-based environments.
