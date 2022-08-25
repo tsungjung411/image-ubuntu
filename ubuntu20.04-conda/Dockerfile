@@ -72,16 +72,8 @@ RUN conda create -y --name python3.8 python=3.8
 RUN conda create -y --name python3.7 python=3.7
 
 
-# for the source command, or you will get `source` not found
-SHELL ["/bin/bash", "-c"]
-
-# init conda configuration
-#
-# $ source ~/.bashrc
-# /bin/sh: 1: source: not found --> SHELL ["/bin/bash", "-c"]
-#
-#RUN conda init && source ~/.bashrc
-RUN conda init && source ~/.bashrc
+# Init conda configuration
+RUN conda init
 
 
 
@@ -97,7 +89,14 @@ RUN echo 'conda activate python3.9' >> ~/.bashrc
 # ===================================================================
 # - note
 #   $ conda activate python3.9 # cannot work
-# 
+#
+# - troubleshooting
+#   $ source ~/.bashrc
+#   /bin/sh: 1: source: not found --> SHELL ["/bin/bash", "-c"]
+#
+# for the source command, or you will get `source` not found
+SHELL ["/bin/bash", "-c"]
+
 RUN source activate python3.9 && python3 --version  # Python 3.9.12
 RUN source activate python3.8 && python3 --version  # Python 3.8.13
 RUN source activate python3.7 && python3 --version  # Python 3.7.13
@@ -116,4 +115,3 @@ RUN source activate python3.7 && python3 --version  # Python 3.7.13
 #
 # - switch to the base environment (exit the python3.9 environment)
 #   (python3.9) $ conda deativate
-
