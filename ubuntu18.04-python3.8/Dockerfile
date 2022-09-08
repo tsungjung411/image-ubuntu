@@ -1,6 +1,6 @@
 # Usages:
 #   # build the image (take 9 minutes)
-#   $ docker build -t ubuntu18.04-python3.6 .
+#   $ docker build -t ubuntu18.04-python3.8 .
 
 FROM ubuntu:18.04
 
@@ -73,7 +73,7 @@ RUN apt install tzdata \
 #
 RUN apt install -y software-properties-common
 
-# install Python3.9
+# install Python3.8
 # - version: Python 3.8.0 (default, Dec  9 2021, 17:53:27)
 RUN apt install -y python3.8 python3-pip
 
