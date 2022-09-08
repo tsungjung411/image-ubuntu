@@ -1,14 +1,14 @@
 # Usages:
 # - build the image (may take 11 minutes)
-#   $ docker build -t ubuntu20.04-conda .
+#   $ docker build -t ubuntu18.04-conda .
 #
 # - run the image
-#   $ docker run --rm -it ubuntu20.04-conda
+#   $ docker run --rm -it ubuntu18.04-conda
 #
 
 
 # base image
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 
 
 # [Software Repository]
